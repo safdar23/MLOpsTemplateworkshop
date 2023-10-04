@@ -18,7 +18,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax, thank you..000 
+          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax, thank you..0000
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip
