@@ -18,7 +18,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax 
+          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax, thank you. 
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip
@@ -32,7 +32,7 @@ jobs:
       - name: Install az ml & set default values for AML
         run: | #setup: provide group, workspace and location
           az extension add -n ml -y --version 2.2.1
-          az configure --defaults group=azureml workspace=ws01ent location=westus2
+          az configure --defaults group=safdarzaman-rg workspace=westus3llmfinetune location=westus3   
       - name: run training and model validation
         run: |
          az ml job create -s -f src/workshop/core/pipelines/training_pipeline.yml
