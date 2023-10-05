@@ -18,7 +18,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax, thank you..0000
+          python-version: '3.8' # Versions range or exact version of a Python version to use, using SemVer's version range syntax, changed v1
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip
@@ -36,7 +36,7 @@ jobs:
       - name: run training and model validation
         run: |
          az ml job create -s -f src/workshop/core/pipelines/training_pipeline.yml
-
+      
       - name:  Create Pull Request to Main
         uses: thomaseizinger/create-pull-request@master
         with:
@@ -44,4 +44,3 @@ jobs:
           head: ${{ github.ref }}
           base: main
           title: "An automatically created PR to main by successful CI"
-
